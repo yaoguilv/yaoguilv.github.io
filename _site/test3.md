@@ -1,4 +1,3 @@
-## passing arrays
 ``` c++
 #include <iostream>
 #include <vector>
@@ -74,45 +73,3 @@ int main()
 }
 ```
 
-## Returning arrays from functions
-```
-#include <vector>
-#include <iostream>
-#include <limits>
-
-// Prints out array elements. Method 2 from PART I.
-template <class ForwardIteratorType> 
-void printArray(ForwardIteratorType begin, ForwardIteratorType end)
-{
-    while(begin != end)
-    {
-        std::cout << *begin << ' ';
-        ++begin;
-    }
-    std::cout << std::endl;
-}
-
-// The caller must decide whether to pass an empty container.  This function will 
-// add to it.  
-void readScores(std::vector<int>& container)
-{
-    std::cout << "Type the list of scores followed by a non-numeric character and press enter when finished. " 
-              << "For instance (22 25 26 f <enter> " << std::endl;
-    int temp(0);
-    while(std::cin >> temp)
-    {
-        container.push_back(temp);
-    }
-    // clear and discard any leftover data from the input stream.
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
-
-int main()
-{
-    std::vector<int> scores; // uninitialized.  Let readScores fill it.
-    readScores(scores);
-    printArray(scores.begin(), scores.end());
-    return 0;
-}
-```
