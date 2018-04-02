@@ -1,5 +1,5 @@
 ## passing arrays
-```c_cpp
+``` c_cpp
 #include <iostream>
 #include <vector>
 #include <deque>
