@@ -2,3 +2,4 @@
 ## Jekyll build files Ignore
 #############
 _site/
+Gemfile.lock
